@@ -71,7 +71,7 @@ function App() {
   };
 
   return (
-    <div class="h-full bg-gradient-to-br from-purple-100 to-blue-100 p-4">
+    <div class="min-h-screen bg-gradient-to-br from-purple-100 to-blue-100 p-4">
       <Show
         when={currentPage() === 'homePage'}
         fallback={
@@ -99,7 +99,7 @@ function App() {
           </div>
         }
       >
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-6xl mx-auto h-full flex flex-col">
           <div class="flex justify-between items-center mb-8">
             <h1 class="text-4xl font-bold text-purple-600">New App</h1>
             <button
@@ -133,7 +133,7 @@ function App() {
           </div>
 
           <Show when={generatedArticle()}>
-            <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <div class="bg-white p-6 rounded-lg shadow-md mb-8 flex-1 overflow-auto">
               <h2 class="text-2xl font-bold mb-4 text-purple-600">Generated Blog Post</h2>
               <SolidMarkdown children={generatedArticle()} />
             </div>
